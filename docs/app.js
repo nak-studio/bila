@@ -1,11 +1,29 @@
-// Helper to create an element with text
 function createEl(tag, text) {
   const el = document.createElement(tag);
   el.textContent = text;
   return el;
 }
 
-// Load JSON data
+// Toggle text preview/full text
+function addReadMore(p, fullText) {
+  const readMore = document.createElement('span');
+  readMore.textContent = ' Read more';
+  readMore.className = 'read-more';
+
+  readMore.addEventListener('click', () => {
+    if (p.classList.contains('text-preview')) {
+      p.classList.remove('text-preview');
+      readMore.textContent = ' Show less';
+    } else {
+      p.classList.add('text-preview');
+      readMore.textContent = ' Read more';
+    }
+  });
+
+  p.appendChild(readMore);
+}
+
+// Load JSON
 async function loadData() {
   try {
     const writingsRes = await fetch('./docs/data/writings.json');
@@ -21,6 +39,7 @@ async function loadData() {
   }
 }
 
+// Display Writings
 function displayWritings(writings) {
   const container = document.getElementById('writings');
   writings.forEach(w => {
@@ -28,7 +47,12 @@ function displayWritings(writings) {
     div.className = 'item';
 
     div.appendChild(createEl('h3', w.title));
-    div.appendChild(createEl('p', w.text));
+
+    const p = createEl('p', w.text);
+    p.className = 'text-preview';
+    div.appendChild(p);
+
+    if (w.text.length > 200) addReadMore(p, w.text);
 
     if (w.topics && w.topics.length > 0) {
       div.appendChild(createEl('p', 'Topics: ' + w.topics.join(', ')));
@@ -47,6 +71,7 @@ function displayWritings(writings) {
   });
 }
 
+// Display Artworks
 function displayArtworks(artworks) {
   const container = document.getElementById('artworks');
   artworks.forEach(a => {
@@ -54,7 +79,12 @@ function displayArtworks(artworks) {
     div.className = 'item';
 
     div.appendChild(createEl('h3', a.title));
-    if(a.description) div.appendChild(createEl('p', a.description));
+    if(a.description) {
+      const p = createEl('p', a.description);
+      p.className = 'text-preview';
+      div.appendChild(p);
+      if(a.description.length > 200) addReadMore(p, a.description);
+    }
 
     if (a.images) {
       a.images.forEach(img => {
@@ -69,5 +99,4 @@ function displayArtworks(artworks) {
   });
 }
 
-// Initialize
 loadData();
