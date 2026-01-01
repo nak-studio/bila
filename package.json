@@ -1,0 +1,26 @@
+{
+  "name": "bila",
+  "version": "1.0.0",
+  "description": "Seeking a path by art. A way to understand myself, a way to understand the word.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nak-studio/bila.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nak-studio/bila/issues"
+  },
+  "homepage": "https://github.com/nak-studio/bila#readme",
+  "dependencies": {
+    "ajv": "^8.17.1"
+  }
+}
