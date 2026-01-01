@@ -126,11 +126,11 @@ async function loadData() {
     );
 
     // Clear containers
-    document.getElementById('writings').innerHTML = '';
     document.getElementById('artworks').innerHTML = '';
+    document.getElementById('writings').innerHTML = '';
 
-    displayWritings(filteredWritings);
     displayArtworks(filteredArtworks);
+    displayWritings(filteredWritings);
 
   } catch (err) {
     console.error('Error loading data:', err);
@@ -146,6 +146,15 @@ function displayWritings(writings) {
 
     div.appendChild(createEl('h3', w.title));
 
+    if (w.imageGallery && w.imageGallery.length > 0) {
+      w.imageGallery.forEach(img => {
+        const imageEl = document.createElement('img');
+        imageEl.src = img.url;
+        imageEl.alt = img.alt || '';
+        div.appendChild(imageEl);
+      });
+    }
+
     const p = createEl('p', w.text);
     p.className = 'text-preview';
     div.appendChild(p);
@@ -153,16 +162,22 @@ function displayWritings(writings) {
     if (w.text.length > 200) addReadMore(p, w.text);
 
     if (w.topics && w.topics.length > 0) {
-      div.appendChild(createEl('p', t('topicsLabel') + ' ' + w.topics.join(', ')));
-    }
-
-    if (w.imageGallery) {
-      w.imageGallery.forEach(img => {
-        const imageEl = document.createElement('img');
-        imageEl.src = img.url;
-        imageEl.alt = img.alt || '';
-        div.appendChild(imageEl);
+      const topicsLabel = createEl('p', t('topicsLabel') + ': ');
+      topicsLabel.style.display = 'inline';
+      div.appendChild(topicsLabel);
+      
+      const topicsContainer = document.createElement('div');
+      topicsContainer.style.display = 'inline';
+      w.topics.forEach((topic, index) => {
+        const badge = document.createElement('span');
+        badge.className = 'nk-badge';
+        badge.textContent = topic;
+        topicsContainer.appendChild(badge);
+        if (index < w.topics.length - 1) {
+          topicsContainer.appendChild(document.createTextNode(' '));
+        }
       });
+      div.appendChild(topicsContainer);
     }
 
     container.appendChild(div);
@@ -177,6 +192,16 @@ function displayArtworks(artworks) {
     div.className = 'item';
 
     div.appendChild(createEl('h3', a.title));
+
+    if (a.images && a.images.length > 0) {
+      a.images.forEach(img => {
+        const imageEl = document.createElement('img');
+        imageEl.src = img.url;
+        imageEl.alt = img.alt || '';
+        div.appendChild(imageEl);
+      });
+    }
+
     if(a.description) {
       const p = createEl('p', a.description);
       p.className = 'text-preview';
@@ -184,13 +209,23 @@ function displayArtworks(artworks) {
       if(a.description.length > 200) addReadMore(p, a.description);
     }
 
-    if (a.images) {
-      a.images.forEach(img => {
-        const imageEl = document.createElement('img');
-        imageEl.src = img.url;
-        imageEl.alt = img.alt || '';
-        div.appendChild(imageEl);
+    if (a.topics && a.topics.length > 0) {
+      const topicsLabel = createEl('p', t('topicsLabel') + ': ');
+      topicsLabel.style.display = 'inline';
+      div.appendChild(topicsLabel);
+      
+      const topicsContainer = document.createElement('div');
+      topicsContainer.style.display = 'inline';
+      a.topics.forEach((topic, index) => {
+        const badge = document.createElement('span');
+        badge.className = 'nk-badge';
+        badge.textContent = topic;
+        topicsContainer.appendChild(badge);
+        if (index < a.topics.length - 1) {
+          topicsContainer.appendChild(document.createTextNode(' '));
+        }
       });
+      div.appendChild(topicsContainer);
     }
 
     container.appendChild(div);
