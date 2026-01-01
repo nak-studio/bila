@@ -87,8 +87,8 @@
             "items": { "type": "string" }
           },
           "slug": { "type": "string" },
-          "createdAt": { "type": "string", "format": "date" },
-          "updatedAt": { "type": "string", "format": "date" }
+          "createdAt": { "type": "string" },
+          "updatedAt": { "type": "string" }
         }
       }
     }
