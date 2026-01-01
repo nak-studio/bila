@@ -59,7 +59,12 @@
                   "type": "string",
                   "enum": ["main", "detail", "process", "framed"]
                 },
-                "order": { "type": "number" }
+                "order": { "type": "number" },
+                "mediaType": {
+                  "type": "string",
+                  "enum": ["image", "video"],
+                  "default": "image"
+                }
               }
             }
           },

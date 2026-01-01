@@ -19,10 +19,10 @@
     "sold": "Saldua",
     "notForSale": "Ez dago salgai",
     "authorCredit": "{author}k sortutako proiektua",
-    "designSystemCredit": "{nakds} design system erabiliz eraikitako webgunea",
+    "designSystemCredit": "{nakds} design systema erabiliz eraikitako webgunea",
     "copyright": "2026 Bila — {license}",
     "aiDisclaimerLabel": "IA-ri buruz:",
-    "aiDisclaimer": "Copilot (GitHub-en IA tresna) erabili dut webgunea eraikitzen laguntzeko eta inglesera itzultzeko. Edukin guztia, artelanak eta idatziak guztiz nireak dira.",
+    "aiDisclaimer": "Copilot (GitHub-en IA tresna) erabili dut webgunea eraikitzen laguntzeko eta ingelesera itzultzeko. Edukin guztia, artelanak eta idatziak guztiz nireak dira.",
     "filterLabel": "✨ Bilatzen",
     "clearFilter": "✕ Filtroa kendu",
     "close": "✕ Itxi"

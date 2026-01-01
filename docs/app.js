@@ -158,7 +158,11 @@ function openDrawer(artwork) {
   
   if (artwork.images && artwork.images.length > 0) {
     artwork.images.forEach(img => {
-      parts.push(`<img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt || '')}" style="width: 100%; margin-bottom: var(--medium);" loading="lazy">`);
+      if (img.mediaType === 'video') {
+        parts.push(`<video src="${escapeHtml(img.url)}" controls loop muted playsinline style="width: 100%; margin-bottom: var(--medium);" aria-label="${escapeHtml(img.alt || '')}"></video>`);
+      } else {
+        parts.push(`<img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt || '')}" style="width: 100%; margin-bottom: var(--medium);" loading="lazy">`);
+      }
     });
   }
   
@@ -353,6 +357,26 @@ function createImageElement(img) {
   return imageEl;
 }
 
+// Helper: Create media element (image or video)
+function createMediaElement(media) {
+  if (media.mediaType === 'video') {
+    const videoEl = document.createElement('video');
+    videoEl.src = media.url;
+    videoEl.controls = true;
+    videoEl.loop = true;
+    videoEl.muted = true;
+    videoEl.playsInline = true;
+    videoEl.style.width = '100%';
+    videoEl.loading = 'lazy';
+    if (media.alt) {
+      videoEl.setAttribute('aria-label', media.alt);
+    }
+    return videoEl;
+  } else {
+    return createImageElement(media);
+  }
+}
+
 // Display Writings
 function displayWritings(writings) {
   const container = getElement(DOM_IDS.WRITINGS);
@@ -366,7 +390,7 @@ function displayWritings(writings) {
 
     if (w.imageGallery && w.imageGallery.length > 0) {
       w.imageGallery.forEach(img => {
-        div.appendChild(createImageElement(img));
+        div.appendChild(createMediaElement(img));
       });
     }
 
@@ -417,7 +441,7 @@ function displayArtworks(artworks) {
 
     if (a.images && a.images.length > 0) {
       a.images.forEach(img => {
-        div.appendChild(createImageElement(img));
+        div.appendChild(createMediaElement(img));
       });
     }
 
