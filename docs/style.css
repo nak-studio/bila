@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #f9f9f9;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+.item {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.item img {
+  max-width: 200px;
+  display: block;
+  margin-top: 10px;
+  border-radius: 5px;
+}
