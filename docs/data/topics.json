@@ -1,0 +1,29 @@
+{
+  "$schema": "../schemas/topic.schema.json",
+  "topics": [
+    {
+      "id": "silence",
+      "slug": "silence",
+      "label": "Silence",
+      "description": "Works related to quietness, stillness, and pause."
+    },
+    {
+      "id": "process",
+      "slug": "process",
+      "label": "Process",
+      "description": "The act of making, repetition, and attention over result."
+    },
+    {
+      "id": "nature",
+      "slug": "nature",
+      "label": "Nature",
+      "description": "Organic forms, natural rhythms, and landscape as presence."
+    },
+    {
+      "id": "time",
+      "slug": "time",
+      "label": "Time",
+      "description": "Duration, slowness, and the experience of time passing."
+    }
+  ]
+}

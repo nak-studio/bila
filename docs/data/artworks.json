@@ -1,28 +1,32 @@
 {
+  "$schema": "../schemas/artwork.schema.json",
   "artworks": [
     {
       "id": "art-001",
       "title": "Quiet Water",
       "description": "Watercolor exploring silence and repetition.",
-      "medium": ["watercolor", "paper"],
-      "topics": ["nature", "silence", "process"],
-
+      "medium": [
+        "watercolor",
+        "paper"
+      ],
+      "topics": [
+        "nature",
+        "silence",
+        "process"
+      ],
       "dimensions": {
         "width": 30,
         "height": 40,
         "unit": "cm"
       },
-
       "edition": {
         "type": "original",
         "number": null
       },
-
       "exhibition": {
         "name": "First Year",
         "year": 2026
       },
-
       "images": [
         {
           "id": "img-001",
@@ -39,18 +43,16 @@
           "order": 2
         }
       ],
-
       "status": "available",
       "visibility": "public",
       "language": "es",
-
       "price": {
         "amount": 180,
         "currency": "EUR"
       },
-
-      "relatedWritings": ["writing-003"],
-
+      "relatedWritings": [
+        "writing-003"
+      ],
       "slug": "quiet-water",
       "createdAt": "2025-12-20",
       "updatedAt": "2026-01-01"

@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/exhibition.schema.json",
+  "exhibitions": [
+    {
+      "id": "exh-2026-first-year",
+      "name": "First Year",
+      "year": 2026,
+      "description": "A first body of work focused on slowness, attention, and the beginning of a visual language.",
+      "artworks": [
+        "art-001"
+      ],
+      "writings": [
+        "writing-003"
+      ],
+      "visibility": "public"
+    }
+  ]
+}
