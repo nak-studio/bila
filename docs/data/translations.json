@@ -24,7 +24,8 @@
     "aiDisclaimerLabel": "IA-ri buruz:",
     "aiDisclaimer": "Copilot (GitHub-en IA tresna) erabili dut webgunea eraikitzen laguntzeko eta inglesera itzultzeko. Edukin guztia, artelanak eta idatziak guztiz nireak dira.",
     "filterLabel": "✨ Bilatzen",
-    "clearFilter": "✕ Filtroa kendu"
+    "clearFilter": "✕ Filtroa kendu",
+    "close": "✕ Itxi"
   },
   "en": {
     "siteTitle": "Bila",
@@ -51,6 +52,7 @@
     "aiDisclaimerLabel": "AI Disclaimer:",
     "aiDisclaimer": "I used Copilot (GitHub's AI tool) to help build and translate this website to English. All content, artworks and writings are entirely my own.",
     "filterLabel": "✨ Exploring",
-    "clearFilter": "✕ Clear"
+    "clearFilter": "✕ Clear",
+    "close": "✕ Close"
   }
 }

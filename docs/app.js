@@ -93,6 +93,68 @@ function t(key) {
   return translations[currentLang]?.[key] || key;
 }
 
+// Open drawer with artwork details
+function openDrawer(artwork) {
+  const drawer = document.getElementById('artwork-drawer');
+  const dimmer = document.getElementById('drawer-dimmer');
+  const content = document.getElementById('drawer-content');
+  
+  // Build drawer content
+  let html = `<h2 class="nk-heading--2">${artwork.title}</h2>`;
+  
+  if (artwork.images && artwork.images.length > 0) {
+    artwork.images.forEach(img => {
+      html += `<img src="${img.url}" alt="${img.alt || ''}" style="width: 100%; margin-bottom: var(--medium);">`;
+    });
+  }
+  
+  if (artwork.description) {
+    html += `<p>${artwork.description}</p>`;
+  }
+  
+  if (artwork.medium && artwork.medium.length > 0) {
+    html += `<p><strong>${t('medium')}</strong> ${artwork.medium.join(', ')}</p>`;
+  }
+  
+  if (artwork.dimensions) {
+    const dim = artwork.dimensions;
+    html += `<p><strong>${t('dimensions')}</strong> ${dim.width} × ${dim.height} ${dim.unit}</p>`;
+  }
+  
+  if (artwork.price) {
+    html += `<p><strong>${t('price')}</strong> ${artwork.price.amount} ${artwork.price.currency}</p>`;
+  }
+  
+  if (artwork.status) {
+    const statusText = t(artwork.status) || artwork.status;
+    html += `<p><strong>Status:</strong> ${statusText}</p>`;
+  }
+  
+  if (artwork.topics && artwork.topics.length > 0) {
+    html += `<p><strong>${t('topicsLabel')}</strong> `;
+    artwork.topics.forEach((topic, index) => {
+      html += `<span class="nk-badge" style="cursor: pointer;" onclick="closeDrawer(); filterByTopic('${topic}')">${topic}</span>`;
+      if (index < artwork.topics.length - 1) html += ' ';
+    });
+    html += '</p>';
+  }
+  
+  content.innerHTML = html;
+  drawer.classList.add('nk-is-open');
+  dimmer.classList.add('nk-is-open');
+  
+  // Close on dimmer click
+  dimmer.onclick = closeDrawer;
+}
+
+// Close drawer
+function closeDrawer() {
+  const drawer = document.getElementById('artwork-drawer');
+  const dimmer = document.getElementById('drawer-dimmer');
+  drawer.classList.remove('nk-is-open');
+  dimmer.classList.remove('nk-is-open');
+}
+
 // Toggle text preview/full text
 function addReadMore(p, fullText) {
   const readMore = document.createElement('span');
@@ -239,6 +301,8 @@ function displayArtworks(artworks) {
   artworks.forEach(a => {
     const div = document.createElement('div');
     div.className = 'item';
+    div.style.cursor = 'pointer';
+    div.onclick = () => openDrawer(a);
 
     div.appendChild(createEl('h3', a.title));
 
@@ -287,4 +351,7 @@ function displayArtworks(artworks) {
 (async function init() {
   await initI18n();
   await loadData();
+  
+  // Setup close drawer button
+  document.getElementById('close-drawer').onclick = closeDrawer;
 })();
