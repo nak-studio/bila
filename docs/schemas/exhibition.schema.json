@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Exhibition",
+  "type": "object",
+  "required": ["exhibitions"],
+  "properties": {
+    "exhibitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "year"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "year": { "type": "number" },
+
+          "description": { "type": "string" },
+
+          "artworks": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+
+          "writings": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+
+          "visibility": {
+            "type": "string",
+            "enum": ["public", "private"]
+          }
+        }
+      }
+    }
+  }
+}

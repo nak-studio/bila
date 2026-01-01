@@ -41,19 +41,17 @@
       ],
 
       "status": "available",
+      "visibility": "public",
+      "language": "es",
 
       "price": {
         "amount": 180,
         "currency": "EUR"
       },
 
-      "visibility": "public",
-      "language": "es",
-
       "relatedWritings": ["writing-003"],
 
       "slug": "quiet-water",
-
       "createdAt": "2025-12-20",
       "updatedAt": "2026-01-01"
     }

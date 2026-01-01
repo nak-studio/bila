@@ -1,21 +1,36 @@
 {
   "writings": [
     {
-      "id": "001",
-      "text": "Your full written text goes here...",
-      "topics": ["art", "process", "reflection"],
+      "id": "writing-003",
+      "title": "Painting Slowly",
+      "text": "Painting as a way of slowing down and listening.",
+      "topics": ["silence", "process", "time"],
+
+      "edition": {
+        "type": "text",
+        "number": null
+      },
+
+      "exhibition": {
+        "name": "First Year",
+        "year": 2026
+      },
+
       "imageGallery": [
         {
-          "id": "img-001",
-          "url": "https://example.com/images/image1.jpg",
-          "alt": "Watercolor sketch in progress"
-        },
-        {
-          "id": "img-002",
-          "url": "https://example.com/images/image2.jpg",
-          "alt": "Final artwork detail"
+          "id": "img-w-001",
+          "url": "https://nak.studio/images/writings/process-01.jpg",
+          "alt": "Sketches and watercolor tests",
+          "order": 1
         }
       ],
+
+      "visibility": "public",
+      "language": "es",
+
+      "relatedArtworks": ["art-001"],
+
+      "slug": "painting-slowly",
       "createdAt": "2026-01-01",
       "updatedAt": "2026-01-01"
     }

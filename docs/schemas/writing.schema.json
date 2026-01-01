@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Writing",
+  "type": "object",
+  "required": ["writings"],
+  "properties": {
+    "writings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "text", "visibility", "language", "slug"],
+        "properties": {
+          "id": { "type": "string" },
+
+          "title": { "type": "string" },
+          "text": { "type": "string" },
+
+          "topics": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+
+          "edition": {
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+              "type": { "type": "string" },
+              "number": { "type": ["number", "null"] }
+            }
+          },
+
+          "exhibition": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "year": { "type": "number" }
+            }
+          },
+
+          "imageGallery": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["url"],
+              "properties": {
+                "id": { "type": "string" },
+                "url": { "type": "string", "format": "uri" },
+                "alt": { "type": "string" },
+                "order": { "type": "number" }
+              }
+            }
+          },
+
+          "visibility": {
+            "type": "string",
+            "enum": ["public", "private"]
+          },
+
+          "language": {
+            "type": "string",
+            "enum": ["es", "en", "eu"]
+          },
+
+          "relatedArtworks": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+
+          "slug": { "type": "string" },
+
+          "createdAt": { "type": "string", "format": "date" },
+          "updatedAt": { "type": "string", "format": "date" }
+        }
+      }
+    }
+  }
+}
