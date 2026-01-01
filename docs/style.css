@@ -3,6 +3,12 @@
   position: relative;
 }
 
+/* Cover title with bold font */
+.nk-cover__title {
+  font-family: lato-black, sans-serif;
+  font-weight: 900;
+}
+
 /* Cover with background image */
 .nk-cover--with-image {
   background: 

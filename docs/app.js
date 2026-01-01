@@ -14,6 +14,28 @@ import { getElement } from './utils/dom.js';
 import { DOM_IDS } from './modules/state.js';
 
 /**
+ * Set random cover image
+ */
+function setRandomCoverImage() {
+  const coverImages = [
+    'https://raw.githubusercontent.com/nakDS/nakds/refs/heads/main/assets/img/randomMatches.jpg',
+    'https://raw.githubusercontent.com/nakDS/nakds/refs/heads/main/assets/img/scott-rodgerson-z0MDyylvY1k-unsplash.jpg',
+    'https://raw.githubusercontent.com/nakDS/nakds/refs/heads/main/assets/img/kevin-lee-K9cc-19hBKY-unsplash.jpg',
+    'https://raw.githubusercontent.com/nakDS/nakds/refs/heads/main/assets/img/randomMatches_142.jpg'
+  ];
+  
+  const randomImage = coverImages[Math.floor(Math.random() * coverImages.length)];
+  const cover = document.querySelector('.nk-cover--with-image');
+  
+  if (cover) {
+    cover.style.backgroundImage = `
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(${randomImage})
+    `;
+  }
+}
+
+/**
  * Render all content (artworks and writings)
  */
 async function renderContent() {
@@ -53,6 +75,9 @@ async function renderContent() {
  */
 async function init() {
   try {
+    // Set random cover image
+    setRandomCoverImage();
+    
     // Initialize i18n system
     await initI18n();
     
