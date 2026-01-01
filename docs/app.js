@@ -1,6 +1,9 @@
 // Global state
 let currentLang = localStorage.getItem('lang') || 'eu';
 let translations = {};
+let allWritings = [];
+let allArtworks = [];
+let currentFilter = null;
 
 function createEl(tag, text) {
   const el = document.createElement(tag);
@@ -118,12 +121,21 @@ async function loadData() {
     const artworksData = await artworksRes.json();
 
     // Filter by current language or show all if no language field
-    const filteredWritings = writingsData.writings.filter(w => 
+    allWritings = writingsData.writings.filter(w => 
       !w.language || w.language === currentLang
     );
-    const filteredArtworks = artworksData.artworks.filter(a => 
+    allArtworks = artworksData.artworks.filter(a => 
       !a.language || a.language === currentLang
     );
+
+    // Apply filter if exists
+    let filteredWritings = allWritings;
+    let filteredArtworks = allArtworks;
+    
+    if (currentFilter) {
+      filteredWritings = allWritings.filter(w => w.topics && w.topics.includes(currentFilter));
+      filteredArtworks = allArtworks.filter(a => a.topics && a.topics.includes(currentFilter));
+    }
 
     // Clear containers
     document.getElementById('artworks').innerHTML = '';
@@ -131,9 +143,44 @@ async function loadData() {
 
     displayArtworks(filteredArtworks);
     displayWritings(filteredWritings);
+    
+    // Update filter display
+    updateFilterDisplay();
 
   } catch (err) {
     console.error('Error loading data:', err);
+  }
+}
+
+// Filter by topic
+function filterByTopic(topic) {
+  currentFilter = topic;
+  loadData();
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Clear filter
+function clearFilter() {
+  currentFilter = null;
+  loadData();
+}
+
+// Update filter display
+function updateFilterDisplay() {
+  const filterBar = document.getElementById('filter-bar');
+  const filterDisplay = document.getElementById('filter-display');
+  
+  if (currentFilter) {
+    filterBar.style.display = 'block';
+    
+    const filterText = t('filterLabel') || '✨ Exploring';
+    filterDisplay.innerHTML = `
+      <span style="margin-right: var(--small);">${filterText}: <strong>${currentFilter}</strong></span>
+      <button class="nk-button" onclick="clearFilter()">${t('clearFilter') || '✕ Clear'}</button>
+    `;
+  } else {
+    filterBar.style.display = 'none';
   }
 }
 
@@ -172,6 +219,8 @@ function displayWritings(writings) {
         const badge = document.createElement('span');
         badge.className = 'nk-badge';
         badge.textContent = topic;
+        badge.style.cursor = 'pointer';
+        badge.onclick = () => filterByTopic(topic);
         topicsContainer.appendChild(badge);
         if (index < w.topics.length - 1) {
           topicsContainer.appendChild(document.createTextNode(' '));
@@ -220,6 +269,8 @@ function displayArtworks(artworks) {
         const badge = document.createElement('span');
         badge.className = 'nk-badge';
         badge.textContent = topic;
+        badge.style.cursor = 'pointer';
+        badge.onclick = () => filterByTopic(topic);
         topicsContainer.appendChild(badge);
         if (index < a.topics.length - 1) {
           topicsContainer.appendChild(document.createTextNode(' '));

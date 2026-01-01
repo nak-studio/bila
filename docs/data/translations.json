@@ -22,7 +22,9 @@
     "designSystemCredit": "{nakds} design system erabiliz eraikitako webgunea",
     "copyright": "2026 Bila — {license}",
     "aiDisclaimerLabel": "IA-ri buruz:",
-    "aiDisclaimer": "Copilot (GitHub-en IA tresna) erabili dut webgunea eraikitzen laguntzeko eta inglesera itzultzeko. Edukin guztia, artelanak eta idatziak guztiz nireak dira."
+    "aiDisclaimer": "Copilot (GitHub-en IA tresna) erabili dut webgunea eraikitzen laguntzeko eta inglesera itzultzeko. Edukin guztia, artelanak eta idatziak guztiz nireak dira.",
+    "filterLabel": "✨ Bilatzen",
+    "clearFilter": "✕ Filtroa kendu"
   },
   "en": {
     "siteTitle": "Bila",
@@ -47,6 +49,8 @@
     "designSystemCredit": "designed with {nakds} design system",
     "copyright": "2026 Bila — {license}",
     "aiDisclaimerLabel": "AI Disclaimer:",
-    "aiDisclaimer": "I used Copilot (GitHub's AI tool) to help build and translate this website to English. All content, artworks and writings are entirely my own."
+    "aiDisclaimer": "I used Copilot (GitHub's AI tool) to help build and translate this website to English. All content, artworks and writings are entirely my own.",
+    "filterLabel": "✨ Exploring",
+    "clearFilter": "✕ Clear"
   }
 }
