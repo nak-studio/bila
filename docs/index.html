@@ -7,18 +7,54 @@
     <link rel="stylesheet" href="vendor/nakds.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-      <h1>Bila</h1>
+<body class="nk-bg--k-10">
+  
+  <!-- Header -->
+  <header class="nk-section nk-bg--m">
+    <div class="nk-container--content">
+      <!-- Language Selector -->
+      <div class="nk-toolbar nk-justify-content--end nk-pbn">
+        <button id="lang-eu" class="nk-button nk-button--color lang-btn active" data-lang="eu">EU</button>
+        <button id="lang-en" class="nk-button lang-btn" data-lang="en">EN</button>
+      </div>
+      
+      <div class="nk-text-align--center">
+        <h1 class="nk-heading--1 nk-color--k-10" data-i18n="siteTitle">Bila</h1>
+        <p class="nk-color--k-10" data-i18n="siteSubtitle">Artea bilaketa tresna bezela</p>
+      </div>
+    </div>
+  </header>
 
-  <section>
-    <h2>Writings</h2>
-    <div id="writings" class="nd-grid nd-grid-cols-1 md:nd-grid-cols-2 lg:nd-grid-cols-3 nd-gap-5"></div>
-  </section>
+  <!-- Main Content -->
+  <main>
+    
+    <!-- Writings Section -->
+    <section class="nk-section">
+      <div class="nk-container--content">
+        <h2 class="nk-heading--2 nk-text-align--center nk-mbx" data-i18n="writings">Hitzak</h2>
+        <div id="writings" class="nk-grid-3@md nk-gap--large"></div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Artworks</h2>
-    <div id="artworks" class="nd-grid nd-grid-cols-1 md:nd-grid-cols-2 lg:nd-grid-cols-3 nd-gap-5"></div>
-  </section>
+    <!-- Artworks Section -->
+    <section class="nk-section nk-bg--k-9">
+      <div class="nk-container--content">
+        <h2 class="nk-heading--2 nk-text-align--center nk-mbx" data-i18n="artworks">Irudiak</h2>
+        <div id="artworks" class="nk-grid-3@md nk-gap--large"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="nk-footer nk-bg--k-2 nk-color--k-10 nk-text-align--center">
+    <div class="nk-container--content">
+      <p id="footer-author"></p>
+      <p id="footer-design"></p>
+      <p id="footer-ai" class="nk-mtm"></p>
+      <p id="footer-license"></p>
+    </div>
+  </footer>
 
   <script src="app.js"></script>
 </body>

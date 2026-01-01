@@ -2,7 +2,63 @@
   "$schema": "../schemas/artwork.schema.json",
   "artworks": [
     {
-      "id": "art-001",
+      "id": "art-001-eu",
+      "title": "Ur Isila",
+      "description": "Akuarela bat isiltasuna eta errepikapena aztertzen.",
+      "medium": [
+        "akuarela",
+        "papera"
+      ],
+      "topics": [
+        "natura",
+        "isiltasuna",
+        "prozesua"
+      ],
+      "dimensions": {
+        "width": 30,
+        "height": 40,
+        "unit": "cm"
+      },
+      "edition": {
+        "type": "original",
+        "number": null
+      },
+      "exhibition": {
+        "name": "Lehen urtea",
+        "year": 2026
+      },
+      "images": [
+        {
+          "id": "img-001",
+          "url": "https://nak.studio/images/artworks/quiet-water-01.jpg",
+          "alt": "Akuarela margolan urdin kolore leunetan",
+          "type": "main",
+          "order": 1
+        },
+        {
+          "id": "img-002",
+          "url": "https://nak.studio/images/artworks/quiet-water-detail.jpg",
+          "alt": "Akuarela ehunduraren xehetasuna",
+          "type": "detail",
+          "order": 2
+        }
+      ],
+      "status": "available",
+      "visibility": "public",
+      "language": "eu",
+      "price": {
+        "amount": 180,
+        "currency": "EUR"
+      },
+      "relatedWritings": [
+        "writing-003-eu"
+      ],
+      "slug": "ur-isila",
+      "createdAt": "2025-12-20",
+      "updatedAt": "2026-01-01"
+    },
+    {
+      "id": "art-001-en",
       "title": "Quiet Water",
       "description": "Watercolor exploring silence and repetition.",
       "medium": [
@@ -45,13 +101,13 @@
       ],
       "status": "available",
       "visibility": "public",
-      "language": "es",
+      "language": "en",
       "price": {
         "amount": 180,
         "currency": "EUR"
       },
       "relatedWritings": [
-        "writing-003"
+        "writing-003-en"
       ],
       "slug": "quiet-water",
       "createdAt": "2025-12-20",

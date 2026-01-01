@@ -2,7 +2,41 @@
   "$schema": "../schemas/writing.schema.json",
   "writings": [
     {
-      "id": "writing-003",
+      "id": "writing-003-eu",
+      "title": "Poliki-poliki margotzen",
+      "text": "Margogintza gelditzeko eta entzuteko modu bat bezala.",
+      "topics": [
+        "isiltasuna",
+        "prozesua",
+        "denbora"
+      ],
+      "edition": {
+        "type": "text",
+        "number": null
+      },
+      "exhibition": {
+        "name": "Lehen urtea",
+        "year": 2026
+      },
+      "imageGallery": [
+        {
+          "id": "img-w-001",
+          "url": "https://nak.studio/images/writings/process-01.jpg",
+          "alt": "Zirriborruak eta akuarela probak",
+          "order": 1
+        }
+      ],
+      "visibility": "public",
+      "language": "eu",
+      "relatedArtworks": [
+        "art-001-eu"
+      ],
+      "slug": "poliki-poliki-margotzen",
+      "createdAt": "2026-01-01",
+      "updatedAt": "2026-01-01"
+    },
+    {
+      "id": "writing-003-en",
       "title": "Painting Slowly",
       "text": "Painting as a way of slowing down and listening.",
       "topics": [
@@ -27,9 +61,9 @@
         }
       ],
       "visibility": "public",
-      "language": "es",
+      "language": "en",
       "relatedArtworks": [
-        "art-001"
+        "art-001-en"
       ],
       "slug": "painting-slowly",
       "createdAt": "2026-01-01",
