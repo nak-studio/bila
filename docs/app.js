@@ -131,12 +131,12 @@ function openDrawer(artwork) {
   }
   
   if (artwork.topics && artwork.topics.length > 0) {
-    html += `<p><strong>${t('topicsLabel')}</strong> `;
+    html += '<div style="margin-top: var(--small);">';
     artwork.topics.forEach((topic, index) => {
       html += `<span class="nk-badge" style="cursor: pointer;" onclick="closeDrawer(); filterByTopic('${topic}')">${topic}</span>`;
       if (index < artwork.topics.length - 1) html += ' ';
     });
-    html += '</p>';
+    html += '</div>';
   }
   
   content.innerHTML = html;
@@ -271,12 +271,8 @@ function displayWritings(writings) {
     if (w.text.length > 200) addReadMore(p, w.text);
 
     if (w.topics && w.topics.length > 0) {
-      const topicsLabel = createEl('p', t('topicsLabel') + ': ');
-      topicsLabel.style.display = 'inline';
-      div.appendChild(topicsLabel);
-      
       const topicsContainer = document.createElement('div');
-      topicsContainer.style.display = 'inline';
+      topicsContainer.style.marginTop = 'var(--small)';
       w.topics.forEach((topic, index) => {
         const badge = document.createElement('span');
         badge.className = 'nk-badge';
@@ -323,12 +319,8 @@ function displayArtworks(artworks) {
     }
 
     if (a.topics && a.topics.length > 0) {
-      const topicsLabel = createEl('p', t('topicsLabel') + ': ');
-      topicsLabel.style.display = 'inline';
-      div.appendChild(topicsLabel);
-      
       const topicsContainer = document.createElement('div');
-      topicsContainer.style.display = 'inline';
+      topicsContainer.style.marginTop = 'var(--small)';
       a.topics.forEach((topic, index) => {
         const badge = document.createElement('span');
         badge.className = 'nk-badge';
