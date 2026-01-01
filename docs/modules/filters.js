@@ -59,6 +59,31 @@ export function updateFilterDisplay() {
 }
 
 /**
+ * Get badge color class based on topic name
+ * @param {string} topic - Topic name
+ * @returns {string} nakDS background color class
+ */
+function getBadgeColorClass(topic) {
+  // Hash function to get consistent color for same topic
+  let hash = 0;
+  for (let i = 0; i < topic.length; i++) {
+    hash = topic.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  
+  // Array of nakDS color classes (vivid colors only)
+  const colors = [
+    'nk-bg--c',         // Cyan
+    'nk-bg--m',         // Magenta
+    'nk-bg--y',         // Yellow
+    'nk-bg--c-lighter'  // Light Pink/Rose
+  ];
+  
+  // Get consistent color index
+  const index = Math.abs(hash) % colors.length;
+  return colors[index];
+}
+
+/**
  * Create topic badges component
  * @param {Array} topics - Array of topic strings
  * @returns {HTMLElement} Container with topic badges
@@ -69,7 +94,7 @@ export function createTopicBadges(topics) {
   
   topics.forEach((topic, index) => {
     const badge = document.createElement('span');
-    badge.className = 'nk-badge';
+    badge.className = `nk-badge ${getBadgeColorClass(topic)}`;
     badge.textContent = topic;
     badge.style.cursor = 'pointer';
     badge.onclick = (e) => {

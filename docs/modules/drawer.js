@@ -9,6 +9,31 @@ import { t } from './i18n.js';
 import { filterByTopic } from './filters.js';
 
 /**
+ * Get badge color class based on topic name
+ * @param {string} topic - Topic name
+ * @returns {string} nakDS background color class
+ */
+function getBadgeColorClass(topic) {
+  // Hash function to get consistent color for same topic
+  let hash = 0;
+  for (let i = 0; i < topic.length; i++) {
+    hash = topic.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  
+  // Array of nakDS color classes (vivid colors only)
+  const colors = [
+    'nk-bg--c',         // Cyan
+    'nk-bg--m',         // Magenta
+    'nk-bg--y',         // Yellow
+    'nk-bg--c-lighter'  // Light Pink/Rose
+  ];
+  
+  // Get consistent color index
+  const index = Math.abs(hash) % colors.length;
+  return colors[index];
+}
+
+/**
  * Open drawer with artwork details
  * @param {Object} artwork - Artwork object
  * @param {number} startIndex - Starting image index
@@ -123,9 +148,10 @@ function buildDrawerContent(artwork, startIndex) {
   
   // Topics
   if (artwork.topics && artwork.topics.length > 0) {
-    const badges = artwork.topics.map(topic => 
-      `<span class="nk-badge" style="cursor: pointer;" onclick="window.bilaApp.closeDrawer(); window.bilaApp.filterByTopic('${escapeHtml(topic)}')">${escapeHtml(topic)}</span>`
-    ).join(' ');
+    const badges = artwork.topics.map(topic => {
+      const colorClass = getBadgeColorClass(topic);
+      return `<span class="nk-badge ${colorClass}" style="cursor: pointer;" onclick="window.bilaApp.closeDrawer(); window.bilaApp.filterByTopic('${escapeHtml(topic)}')">${escapeHtml(topic)}</span>`;
+    }).join(' ');
     parts.push(`<div style="margin-top: var(--small);">${badges}</div>`);
   }
   

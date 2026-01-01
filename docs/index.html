@@ -9,21 +9,24 @@
 </head>
 <body class="nk-bg--k-10">
   
-  <!-- Header -->
-  <header class="nk-section nk-bg--m">
-    <div class="nk-container--content">
-      <!-- Language Selector -->
-      <div class="nk-toolbar nk-justify-content--end nk-pbn">
-        <button id="lang-eu" class="nk-button nk-button--color lang-btn active" data-lang="eu">EU</button>
-        <button id="lang-en" class="nk-button lang-btn" data-lang="en">EN</button>
-      </div>
-      
-      <div class="nk-text-align--center">
-        <h1 class="nk-heading--1 nk-color--k-10" data-i18n="siteTitle">Bila</h1>
-        <p class="nk-color--k-10" data-i18n="siteSubtitle">Artea bilaketa tresna bezela</p>
-      </div>
+  <!-- Cover / Hero Section -->
+  <section class="nk-cover nk-cover--with-image nk-cover--dark-mode">
+    <!-- Language Selector -->
+    <div class="nk-toolbar nk-justify-content--end nk-pbn" style="position: absolute; top: 1rem; right: 1rem; z-index: 10;">
+      <button id="lang-eu" class="nk-button lang-btn active" data-lang="eu" style="backdrop-filter: blur(10px); background: rgba(255,255,255,0.2);">EU</button>
+      <button id="lang-en" class="nk-button lang-btn" data-lang="en" style="backdrop-filter: blur(10px); background: rgba(255,255,255,0.2);">EN</button>
     </div>
-  </header>
+    
+    <div class="nk-cover__title" data-i18n="siteTitle">Bila</div>
+    <div class="nk-cover__subtitle" data-i18n="siteSubtitle">Artea bilaketa tresna bezela</div>
+    
+    <!-- Scroll indicator -->
+    <div style="position: absolute; bottom: 2rem; animation: bounce 2s infinite;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </section>
 
   <!-- Filter Bar -->
   <div id="filter-bar" class="nk-section nk-bg--k-9" style="display: none;">

@@ -1,3 +1,31 @@
+/* Cover / Hero Section */
+.nk-cover {
+  position: relative;
+}
+
+/* Cover with background image */
+.nk-cover--with-image {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(https://raw.githubusercontent.com/nakDS/nakds/refs/heads/main/assets/img/randomMatches.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Bounce animation for scroll indicator */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
 /* Language Switcher - Minimal overrides for header context */
 .lang-btn {
   min-width: var(--x-large);
