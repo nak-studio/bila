@@ -26,9 +26,9 @@ function addReadMore(p, fullText) {
 // Load JSON
 async function loadData() {
   try {
-    const writingsRes = await fetch('./docs/data/writings.json');
+    const writingsRes = await fetch('./data/writings.json');
     const writingsData = await writingsRes.json();
-    const artworksRes = await fetch('./docs/data/artworks.json');
+    const artworksRes = await fetch('./data/artworks.json');
     const artworksData = await artworksRes.json();
 
     displayWritings(writingsData.writings);
