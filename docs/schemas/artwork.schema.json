@@ -11,20 +11,16 @@
         "required": ["id", "title", "images", "visibility", "language", "slug"],
         "properties": {
           "id": { "type": "string" },
-
           "title": { "type": "string" },
           "description": { "type": "string" },
-
           "medium": {
             "type": "array",
             "items": { "type": "string" }
           },
-
           "topics": {
             "type": "array",
             "items": { "type": "string" }
           },
-
           "dimensions": {
             "type": "object",
             "required": ["width", "height", "unit"],
@@ -34,7 +30,6 @@
               "unit": { "type": "string", "enum": ["cm", "mm", "in"] }
             }
           },
-
           "edition": {
             "type": "object",
             "required": ["type"],
@@ -43,7 +38,6 @@
               "number": { "type": ["number", "null"] }
             }
           },
-
           "exhibition": {
             "type": "object",
             "properties": {
@@ -51,7 +45,6 @@
               "year": { "type": "number" }
             }
           },
-
           "images": {
             "type": "array",
             "minItems": 1,
@@ -60,7 +53,7 @@
               "required": ["url"],
               "properties": {
                 "id": { "type": "string" },
-                "url": { "type": "string", "format": "uri" },
+                "url": { "type": "string" },
                 "alt": { "type": "string" },
                 "type": {
                   "type": "string",
@@ -70,12 +63,10 @@
               }
             }
           },
-
           "status": {
             "type": "string",
             "enum": ["available", "sold", "reserved", "private"]
           },
-
           "price": {
             "type": "object",
             "properties": {
@@ -83,24 +74,19 @@
               "currency": { "type": "string" }
             }
           },
-
           "visibility": {
             "type": "string",
             "enum": ["public", "private"]
           },
-
           "language": {
             "type": "string",
             "enum": ["es", "en", "eu"]
           },
-
           "relatedWritings": {
             "type": "array",
             "items": { "type": "string" }
           },
-
           "slug": { "type": "string" },
-
           "createdAt": { "type": "string", "format": "date" },
           "updatedAt": { "type": "string", "format": "date" }
         }

@@ -11,15 +11,12 @@
         "required": ["id", "title", "text", "visibility", "language", "slug"],
         "properties": {
           "id": { "type": "string" },
-
           "title": { "type": "string" },
           "text": { "type": "string" },
-
           "topics": {
             "type": "array",
             "items": { "type": "string" }
           },
-
           "edition": {
             "type": "object",
             "required": ["type"],
@@ -28,7 +25,6 @@
               "number": { "type": ["number", "null"] }
             }
           },
-
           "exhibition": {
             "type": "object",
             "properties": {
@@ -36,7 +32,6 @@
               "year": { "type": "number" }
             }
           },
-
           "imageGallery": {
             "type": "array",
             "items": {
@@ -44,30 +39,25 @@
               "required": ["url"],
               "properties": {
                 "id": { "type": "string" },
-                "url": { "type": "string", "format": "uri" },
+                "url": { "type": "string" },
                 "alt": { "type": "string" },
                 "order": { "type": "number" }
               }
             }
           },
-
           "visibility": {
             "type": "string",
             "enum": ["public", "private"]
           },
-
           "language": {
             "type": "string",
             "enum": ["es", "en", "eu"]
           },
-
           "relatedArtworks": {
             "type": "array",
             "items": { "type": "string" }
           },
-
           "slug": { "type": "string" },
-
           "createdAt": { "type": "string", "format": "date" },
           "updatedAt": { "type": "string", "format": "date" }
         }
