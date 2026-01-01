@@ -1,0 +1,23 @@
+{
+  "writings": [
+    {
+      "id": "001",
+      "text": "Your full written text goes here...",
+      "topics": ["art", "process", "reflection"],
+      "imageGallery": [
+        {
+          "id": "img-001",
+          "url": "https://example.com/images/image1.jpg",
+          "alt": "Watercolor sketch in progress"
+        },
+        {
+          "id": "img-002",
+          "url": "https://example.com/images/image2.jpg",
+          "alt": "Final artwork detail"
+        }
+      ],
+      "createdAt": "2026-01-01",
+      "updatedAt": "2026-01-01"
+    }
+  ]
+}
