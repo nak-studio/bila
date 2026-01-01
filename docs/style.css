@@ -22,7 +22,29 @@
   font-size: 0.9rem;
 }
 
+/* Drawer custom styles */
+.nk-drawer {
+  padding: var(--large);
+}
+
+#main-image-container {
+  margin-left: calc(var(--large) * -1);
+  margin-right: calc(var(--large) * -1);
+}
+
+#main-image-container img,
+#main-image-container video {
+  width: 100%;
+  border-radius: 0;
+  background: var(--color--k-9);
+}
+
 /* Content Items */
+.item .nk-card__image {
+  object-fit: contain;
+  background: var(--color--k-9);
+  width: 100%;
+}
 .item {
   background: var(--color--k-10);
   padding: var(--medium);

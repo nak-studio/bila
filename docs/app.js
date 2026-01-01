@@ -144,7 +144,7 @@ function t(key) {
 }
 
 // Open drawer with artwork details
-function openDrawer(artwork) {
+function openDrawer(artwork, startIndex = 0) {
   const drawer = getElement(DOM_IDS.DRAWER);
   const dimmer = getElement(DOM_IDS.DIMMER);
   const content = getElement(DOM_IDS.DRAWER_CONTENT);
@@ -157,13 +157,32 @@ function openDrawer(artwork) {
   parts.push(`<h2 class="nk-heading--2">${escapeHtml(artwork.title)}</h2>`);
   
   if (artwork.images && artwork.images.length > 0) {
-    artwork.images.forEach(img => {
-      if (img.mediaType === 'video') {
-        parts.push(`<video src="${escapeHtml(img.url)}" controls loop muted playsinline style="width: 100%; margin-bottom: var(--medium);" aria-label="${escapeHtml(img.alt || '')}"></video>`);
-      } else {
-        parts.push(`<img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt || '')}" style="width: 100%; margin-bottom: var(--medium);" loading="lazy">`);
-      }
-    });
+    // Main image container (will be updated dynamically)
+    parts.push(`<div id="main-image-container" style="margin-bottom: var(--medium);">`);
+    const mainImg = artwork.images[startIndex];
+    if (mainImg.mediaType === 'video') {
+      parts.push(`<video src="${escapeHtml(mainImg.url)}" controls loop muted playsinline style="width: 100%; m-height: 600px; object-fit: contain;" aria-label="${escapeHtml(mainImg.alt || '')}"></video>`);
+    } else {
+      parts.push(`<img src="${escapeHtml(mainImg.url)}" alt="${escapeHtml(mainImg.alt || '')}" style="width: 100%; min-height: 800px; object-fit: contain;" loading="lazy" class="nk-card__image--full">`);
+    }
+    parts.push(`</div>`);
+    
+    // All images as thumbnails
+    if (artwork.images.length > 1) {
+      parts.push(`<div style="display: flex; gap: var(--small); margin-bottom: var(--medium); flex-wrap: wrap;">`);
+      artwork.images.forEach((img, index) => {
+        const isActive = index === startIndex ? 'border: 3px solid var(--color);' : 'border: 3px solid transparent;';
+        if (img.mediaType === 'video') {
+          parts.push(`<video src="${escapeHtml(img.url)}" muted playsinline style="width: 100px; height: 100px; object-fit: cover; border-radius: 3px; cursor: pointer; ${isActive}" onclick="changeMainImage(${index})" data-index="${index}"></video>`);
+        } else {
+          parts.push(`<img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt || '')}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 3px; cursor: pointer; ${isActive}" loading="lazy" onclick="changeMainImage(${index})" data-index="${index}">`);
+        }
+      });
+      parts.push(`</div>`);
+    }
+    
+    // Store artwork data for thumbnail interaction
+    window.currentArtwork = artwork;
   }
   
   if (artwork.description) {
@@ -211,6 +230,38 @@ function closeDrawer() {
   if (drawer) drawer.classList.remove('nk-is-open');
   if (dimmer) dimmer.classList.remove('nk-is-open');
 }
+
+// Change main image in drawer
+function changeMainImage(index) {
+  const artwork = window.currentArtwork;
+  if (!artwork || !artwork.images || !artwork.images[index]) return;
+  
+  const container = document.getElementById('main-image-container');
+  if (!container) return;
+  
+  const img = artwork.images[index];
+  
+  // Update main image
+  if (img.mediaType === 'video') {
+    container.innerHTML = `<video src="${escapeHtml(img.url)}" controls loop muted playsinline style="width: 100%; max-height: 600px; object-fit: contain;" aria-label="${escapeHtml(img.alt || '')}"></video>`;
+  } else {
+    container.innerHTML = `<img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt || '')}" style="width: 100%; max-height: 600px; object-fit: contain;" loading="lazy" class="nk-card__image--full">`;
+  }
+  
+  // Update thumbnail borders
+  const thumbnails = document.querySelectorAll('[data-index]');
+  thumbnails.forEach(thumb => {
+    const thumbIndex = parseInt(thumb.getAttribute('data-index'));
+    if (thumbIndex === index) {
+      thumb.style.border = '3px solid var(--color)';
+    } else {
+      thumb.style.border = '3px solid transparent';
+    }
+  });
+}
+
+// Make changeMainImage available globally
+window.changeMainImage = changeMainImage;
 
 // Toggle text preview/full text
 function addReadMore(p, fullText) {
@@ -440,9 +491,42 @@ function displayArtworks(artworks) {
     div.appendChild(createEl('h3', a.title));
 
     if (a.images && a.images.length > 0) {
-      a.images.forEach(img => {
-        div.appendChild(createMediaElement(img));
-      });
+      // Main image (first one)
+      const mainImage = createMediaElement(a.images[0]);
+      mainImage.className = 'nk-card__image';
+      mainImage.style.objectFit = 'contain';
+      mainImage.style.height = 'auto';
+      mainImage.style.maxHeight = '500px';
+      div.appendChild(mainImage);
+      
+      // Additional images as thumbnails
+      if (a.images.length > 1) {
+        const thumbContainer = document.createElement('div');
+        thumbContainer.style.display = 'flex';
+        thumbContainer.style.gap = 'var(--small)';
+        thumbContainer.style.marginTop = 'var(--small)';
+        thumbContainer.style.flexWrap = 'wrap';
+        
+        a.images.slice(1).forEach((img, idx) => {
+          const thumb = createMediaElement(img);
+          thumb.style.width = '80px';
+          thumb.style.height = '80px';
+          thumb.style.objectFit = 'cover';
+          thumb.style.borderRadius = '3px';
+          thumb.style.cursor = 'pointer';
+          
+          // Click on thumbnail opens drawer with that image
+          const imageIndex = idx + 1; // +1 because we sliced the first one
+          thumb.onclick = (e) => {
+            e.stopPropagation();
+            openDrawer(a, imageIndex);
+          };
+          
+          thumbContainer.appendChild(thumb);
+        });
+        
+        div.appendChild(thumbContainer);
+      }
     }
 
     if (a.description) {
