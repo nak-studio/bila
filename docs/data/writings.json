@@ -32,6 +32,38 @@
       "slug": "bila",
       "createdAt": "2026-01-02",
       "updatedAt": "2026-01-02"
+    },
+    {
+      "id": "writing-004-en",
+      "title": "Search",
+      "text": "I'm searching. I don't know what for. Searching for a calm inner state, for universal answers, for a vibrant place, for clarity, for knowledge. And I don't know where to find it. In intuition, in painting, in nature. Is it there? I don't know.\nAnd what if I never find it? I search in colors, in forms, in totemic animals and foreign gods. I search within and without, in past memories and future projections. I'm fine, I don't need anything more, but I always feel myself searching.",
+      "topics": [
+        "search",
+        "process",
+        "inner-search"
+      ],
+      "edition": {
+        "type": "text",
+        "number": null
+      },
+      "exhibition": {
+        "name": "Lehen urtea",
+        "year": 2026
+      },
+      "imageGallery": [
+        {
+          "id": "img-w-004-en",
+          "url": "./assets/bila.jpeg",
+          "alt": "Search",
+          "order": 1
+        }
+      ],
+      "visibility": "public",
+      "language": "en",
+      "relatedArtworks": [],
+      "slug": "search",
+      "createdAt": "2026-01-02",
+      "updatedAt": "2026-01-02"
     }
   ]
 }

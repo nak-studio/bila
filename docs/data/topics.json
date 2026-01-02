@@ -24,6 +24,36 @@
       "slug": "time",
       "label": "Time",
       "description": "Duration, slowness, and the experience of time passing."
+    },
+    {
+      "id": "search",
+      "slug": "search",
+      "label": "Search",
+      "description": "The ongoing quest for meaning, understanding, and inner clarity."
+    },
+    {
+      "id": "inner-search",
+      "slug": "inner-search",
+      "label": "Inner Search",
+      "description": "Exploration of the self, introspection, and internal journeys."
+    },
+    {
+      "id": "bila",
+      "slug": "bila",
+      "label": "Bila",
+      "description": "Esanahia, ulermena eta barne-argitasuna bilatzeko etengabeko bidaia."
+    },
+    {
+      "id": "barne-bila",
+      "slug": "barne-bila",
+      "label": "Barne-bila",
+      "description": "Norberaren esplorazio, introspekzio eta barne-bidaiak."
+    },
+    {
+      "id": "prozesua",
+      "slug": "prozesua",
+      "label": "Prozesua",
+      "description": "Egite-ekintza, errepikapena eta emaitza baino arreta."
     }
   ]
 }
