@@ -34,6 +34,28 @@ function getBadgeColorClass(topic) {
 }
 
 /**
+ * Open drawer with writing details
+ * @param {Object} writing - Writing object
+ */
+export function openWritingDrawer(writing) {
+  const drawer = getElement(DOM_IDS.DRAWER);
+  const dimmer = getElement(DOM_IDS.DIMMER);
+  const content = getElement(DOM_IDS.DRAWER_CONTENT);
+  
+  if (!drawer || !dimmer || !content) return;
+  
+  // Build drawer content for writing
+  content.innerHTML = buildWritingDrawerContent(writing);
+  
+  // Show drawer
+  drawer.classList.add('nk-is-open');
+  dimmer.classList.add('nk-is-open');
+  
+  // Close on dimmer click
+  dimmer.onclick = closeDrawer;
+}
+
+/**
  * Open drawer with artwork details
  * @param {Object} artwork - Artwork object
  * @param {number} startIndex - Starting image index
@@ -100,6 +122,45 @@ export function changeMainImage(index) {
       thumb.style.border = '3px solid transparent';
     }
   });
+}
+
+/**
+ * Build drawer content HTML for writing
+ * @param {Object} writing - Writing object
+ * @returns {string} HTML string
+ */
+function buildWritingDrawerContent(writing) {
+  const parts = [];
+  
+  // Title
+  parts.push(`<h2 class="nk-heading--2">${escapeHtml(writing.title)}</h2>`);
+  
+  // Full text
+  if (writing.text) {
+    // Split by paragraphs and render each
+    const paragraphs = writing.text.split('\n').filter(p => p.trim());
+    paragraphs.forEach(paragraph => {
+      parts.push(`<p>${escapeHtml(paragraph)}</p>`);
+    });
+  }
+  
+  // Images
+  if (writing.imageGallery && writing.imageGallery.length > 0) {
+    writing.imageGallery.forEach(img => {
+      parts.push(`<img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt || '')}" style="width: 100%; max-height: 400px; object-fit: contain; margin-bottom: var(--medium); margin-top: var(--medium);" loading="lazy" class="nk-card__image--full">`);
+    });
+  }
+  
+  // Topics
+  if (writing.topics && writing.topics.length > 0) {
+    const badges = writing.topics.map(topic => {
+      const colorClass = getBadgeColorClass(topic);
+      return `<span class="nk-badge ${colorClass}" style="cursor: pointer;" onclick="window.bilaApp.closeDrawer(); window.bilaApp.filterByTopic('${escapeHtml(topic)}')">${escapeHtml(topic)}</span>`;
+    }).join(' ');
+    parts.push(`<div style="margin-top: var(--medium);">${badges}</div>`);
+  }
+  
+  return parts.join('');
 }
 
 /**
