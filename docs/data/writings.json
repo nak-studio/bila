@@ -2,81 +2,13 @@
   "$schema": "../schemas/writing.schema.json",
   "writings": [
     {
-      "id": "writing-003-eu",
-      "title": "Poliki-poliki margotzen",
-      "text": "Margogintza gelditzeko eta entzuteko modu bat bezala.",
-      "topics": [
-        "isiltasuna",
-        "prozesua",
-        "denbora"
-      ],
-      "edition": {
-        "type": "text",
-        "number": null
-      },
-      "exhibition": {
-        "name": "Lehen urtea",
-        "year": 2026
-      },
-      "imageGallery": [
-        {
-          "id": "img-w-001",
-          "url": "https://instagram.fvit1-1.fna.fbcdn.net/v/t51.82787-15/583317153_18411016075189686_3381737969248105216_n.webp?stp=dst-webp_p320x320&_nc_cat=104&ig_cache_key=Mzc2NzA5Njk0OTgxMjg3MjcwOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MjU2MC5zZHIuQzIifQ%3D%3D&_nc_ohc=mYsG0R6ubUsQ7kNvwHXIPVI&_nc_oc=AdmPe2pANmgH2FUarPaBsEGBqa8RmvdmZiqSTV57dFl283Z4e5zizYtzodNdejTwefQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fvit1-1.fna&_nc_gid=V_AU_xarK_x-ZOrVrruYRw&oh=00_AfqusBn1z3FhQbL4HNTgyOLUzT-Z2Wo7NpSwWC3Veuv6dg&oe=695C95B9",
-          "alt": "Zirriborruak eta akuarela probak",
-          "order": 1
-        }
-      ],
-      "visibility": "public",
-      "language": "eu",
-      "relatedArtworks": [
-        "art-001-eu"
-      ],
-      "slug": "poliki-poliki-margotzen",
-      "createdAt": "2026-01-01",
-      "updatedAt": "2026-01-01"
-    },
-    {
-      "id": "writing-003-en",
-      "title": "Painting Slowly",
-      "text": "Painting as a way of slowing down and listening.",
-      "topics": [
-        "silence",
-        "process",
-        "time"
-      ],
-      "edition": {
-        "type": "text",
-        "number": null
-      },
-      "exhibition": {
-        "name": "First Year",
-        "year": 2026
-      },
-      "imageGallery": [
-        {
-          "id": "img-w-001",
-          "url": "https://instagram.fvit1-1.fna.fbcdn.net/v/t51.82787-15/583317153_18411016075189686_3381737969248105216_n.webp?stp=dst-webp_p320x320&_nc_cat=104&ig_cache_key=Mzc2NzA5Njk0OTgxMjg3MjcwOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MjU2MC5zZHIuQzIifQ%3D%3D&_nc_ohc=mYsG0R6ubUsQ7kNvwHXIPVI&_nc_oc=AdmPe2pANmgH2FUarPaBsEGBqa8RmvdmZiqSTV57dFl283Z4e5zizYtzodNdejTwefQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fvit1-1.fna&_nc_gid=V_AU_xarK_x-ZOrVrruYRw&oh=00_AfqusBn1z3FhQbL4HNTgyOLUzT-Z2Wo7NpSwWC3Veuv6dg&oe=695C95B9",
-          "alt": "Sketches and watercolor tests",
-          "order": 1
-        }
-      ],
-      "visibility": "public",
-      "language": "en",
-      "relatedArtworks": [
-        "art-001-en"
-      ],
-      "slug": "painting-slowly",
-      "createdAt": "2026-01-01",
-      "updatedAt": "2026-01-01"
-    },
-    {
       "id": "writing-004-eu",
-      "title": "Kolorearen Limiteetan",
-      "text": "Kolore bat margotu nahi dudanean, ez dakit non hasten den eta non bukatzen den. Ertzak lausotu egiten dira, eta forma bat bilakatzen da beste bat. Hau da nire lana: muga lausoen bila ibiltzea.",
+      "title": "Bila",
+      "text": "​Bila nabil. Ez dakit zeren bila. Barne estadu lasai baten bila, erantzun unibersalen bila, injjar bibrante baten bila, argitxasunen bila, jakiturijjen bila. Eta ez dakit nun topa. Intuiziñian, pinturan, naturan. Hor dao? Ez dakit.\n​Eta ez badot iñoz topaten? Kolorietan nabil bila, formetan, animali totemikuetan eta jangoiko arrotzetan. Barruan eta kanpuan nabil bila, pasatako memorijjan eta etorkizuneko proiekziñoietan. Ondo nago, ez dot ezer gehijjao bihar baña sena beti darabitx bila.",
       "topics": [
-        "kolorea",
-        "abstrakzioa",
-        "prozesua"
+        "bila",
+        "prozesua",
+        "barne-bila"
       ],
       "edition": {
         "type": "text",
@@ -88,178 +20,18 @@
       },
       "imageGallery": [
         {
-          "id": "img-w-002",
-          "url": "https://instagram.fvit1-1.fna.fbcdn.net/v/t51.82787-15/583317153_18411016075189686_3381737969248105216_n.webp?stp=dst-webp_p320x320&_nc_cat=104&ig_cache_key=Mzc2NzA5Njk0OTgxMjg3MjcwOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MjU2MC5zZHIuQzIifQ%3D%3D&_nc_ohc=mYsG0R6ubUsQ7kNvwHXIPVI&_nc_oc=AdmPe2pANmgH2FUarPaBsEGBqa8RmvdmZiqSTV57dFl283Z4e5zizYtzodNdejTwefQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fvit1-1.fna&_nc_gid=V_AU_xarK_x-ZOrVrruYRw&oh=00_AfqusBn1z3FhQbL4HNTgyOLUzT-Z2Wo7NpSwWC3Veuv6dg&oe=695C95B9",
-          "alt": "Kolore geruzen prozesua",
+          "id": "img-w-004",
+          "url": "./assets/bila.jpeg",
+          "alt": "Bila",
           "order": 1
         }
       ],
       "visibility": "public",
       "language": "eu",
-      "relatedArtworks": [
-        "art-003-eu"
-      ],
-      "slug": "kolorearen-limiteetan",
-      "createdAt": "2025-12-15",
-      "updatedAt": "2026-01-01"
-    },
-    {
-      "id": "writing-004-en",
-      "title": "At the Limits of Color",
-      "text": "When I want to paint a color, I don't know where it begins and where it ends. The edges blur, and one form becomes another. This is my work: walking in search of softer boundaries.",
-      "topics": [
-        "color",
-        "abstraction",
-        "process"
-      ],
-      "edition": {
-        "type": "text",
-        "number": null
-      },
-      "exhibition": {
-        "name": "First Year",
-        "year": 2026
-      },
-      "imageGallery": [
-        {
-          "id": "img-w-002",
-          "url": "https://instagram.fvit1-1.fna.fbcdn.net/v/t51.82787-15/583317153_18411016075189686_3381737969248105216_n.webp?stp=dst-webp_p320x320&_nc_cat=104&ig_cache_key=Mzc2NzA5Njk0OTgxMjg3MjcwOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MjU2MC5zZHIuQzIifQ%3D%3D&_nc_ohc=mYsG0R6ubUsQ7kNvwHXIPVI&_nc_oc=AdmPe2pANmgH2FUarPaBsEGBqa8RmvdmZiqSTV57dFl283Z4e5zizYtzodNdejTwefQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fvit1-1.fna&_nc_gid=V_AU_xarK_x-ZOrVrruYRw&oh=00_AfqusBn1z3FhQbL4HNTgyOLUzT-Z2Wo7NpSwWC3Veuv6dg&oe=695C95B9",
-          "alt": "Process of layering colors",
-          "order": 1
-        }
-      ],
-      "visibility": "public",
-      "language": "en",
-      "relatedArtworks": [
-        "art-003-en"
-      ],
-      "slug": "limits-of-color",
-      "createdAt": "2025-12-15",
-      "updatedAt": "2026-01-01"
-    },
-    {
-      "id": "writing-005-eu",
-      "title": "Paperaren Memoria",
-      "text": "Paper bakoitzak bere historia du. Tokiatua izan da, ukitua, tolestu, eta zabaldu. Nire eskuetan, beste istorio bat idazten jarraitzen du.",
-      "topics": [
-        "materiala",
-        "memoria",
-        "objektua"
-      ],
-      "edition": {
-        "type": "text",
-        "number": null
-      },
-      "exhibition": {
-        "name": "Lehen urtea",
-        "year": 2026
-      },
-      "imageGallery": [],
-      "visibility": "public",
-      "language": "eu",
-      "relatedArtworks": [
-        "art-002-eu",
-        "art-004-eu"
-      ],
-      "slug": "paperaren-memoria",
-      "createdAt": "2025-11-28",
-      "updatedAt": "2026-01-01"
-    },
-    {
-      "id": "writing-005-en",
-      "title": "The Memory of Paper",
-      "text": "Each piece of paper has its own history. It has been placed, touched, folded, and unfolded. In my hands, it continues to write another story.",
-      "topics": [
-        "material",
-        "memory",
-        "object"
-      ],
-      "edition": {
-        "type": "text",
-        "number": null
-      },
-      "exhibition": {
-        "name": "First Year",
-        "year": 2026
-      },
-      "imageGallery": [],
-      "visibility": "public",
-      "language": "en",
-      "relatedArtworks": [
-        "art-002-en",
-        "art-004-en"
-      ],
-      "slug": "memory-of-paper",
-      "createdAt": "2025-11-28",
-      "updatedAt": "2026-01-01"
-    },
-    {
-      "id": "writing-006-eu",
-      "title": "Isiltasunaren Praktika",
-      "text": "Ez da txikia den gauzez. Ez da hutsean den gauzez. Isiltasuna praktika bat da, entzuteko modua. Nire margolan guztietan, isiltasuna hartu nahi dut, egin nahi dut berarekin.",
-      "topics": [
-        "isiltasuna",
-        "praktika",
-        "entzutea"
-      ],
-      "edition": {
-        "type": "text",
-        "number": null
-      },
-      "exhibition": {
-        "name": "Lehen urtea",
-        "year": 2026
-      },
-      "imageGallery": [
-        {
-          "id": "img-w-003",
-          "url": "https://instagram.fvit1-1.fna.fbcdn.net/v/t51.82787-15/583317153_18411016075189686_3381737969248105216_n.webp?stp=dst-webp_p320x320&_nc_cat=104&ig_cache_key=Mzc2NzA5Njk0OTgxMjg3MjcwOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MjU2MC5zZHIuQzIifQ%3D%3D&_nc_ohc=mYsG0R6ubUsQ7kNvwHXIPVI&_nc_oc=AdmPe2pANmgH2FUarPaBsEGBqa8RmvdmZiqSTV57dFl283Z4e5zizYtzodNdejTwefQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fvit1-1.fna&_nc_gid=V_AU_xarK_x-ZOrVrruYRw&oh=00_AfqusBn1z3FhQbL4HNTgyOLUzT-Z2Wo7NpSwWC3Veuv6dg&oe=695C95B9",
-          "alt": "Studioko txokoa isiltasunean",
-          "order": 1
-        }
-      ],
-      "visibility": "public",
-      "language": "eu",
-      "relatedArtworks": [
-        "art-001-eu"
-      ],
-      "slug": "isiltasunaren-praktika",
-      "createdAt": "2025-10-10",
-      "updatedAt": "2026-01-01"
-    },
-    {
-      "id": "writing-006-en",
-      "title": "The Practice of Silence",
-      "text": "It's not about what is small. It's not about what is empty. Silence is a practice, a way of listening. In all my paintings, I want to receive silence, to work with it.",
-      "topics": [
-        "silence",
-        "practice",
-        "listening"
-      ],
-      "edition": {
-        "type": "text",
-        "number": null
-      },
-      "exhibition": {
-        "name": "First Year",
-        "year": 2026
-      },
-      "imageGallery": [
-        {
-          "id": "img-w-003",
-          "url": "https://instagram.fvit1-1.fna.fbcdn.net/v/t51.82787-15/583317153_18411016075189686_3381737969248105216_n.webp?stp=dst-webp_p320x320&_nc_cat=104&ig_cache_key=Mzc2NzA5Njk0OTgxMjg3MjcwOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MjU2MC5zZHIuQzIifQ%3D%3D&_nc_ohc=mYsG0R6ubUsQ7kNvwHXIPVI&_nc_oc=AdmPe2pANmgH2FUarPaBsEGBqa8RmvdmZiqSTV57dFl283Z4e5zizYtzodNdejTwefQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fvit1-1.fna&_nc_gid=V_AU_xarK_x-ZOrVrruYRw&oh=00_AfqusBn1z3FhQbL4HNTgyOLUzT-Z2Wo7NpSwWC3Veuv6dg&oe=695C95B9",
-          "alt": "Studio corner in silence",
-          "order": 1
-        }
-      ],
-      "visibility": "public",
-      "language": "en",
-      "relatedArtworks": [
-        "art-001-en"
-      ],
-      "slug": "practice-of-silence",
-      "createdAt": "2025-10-10",
-      "updatedAt": "2026-01-01"
+      "relatedArtworks": [],
+      "slug": "bila",
+      "createdAt": "2026-01-02",
+      "updatedAt": "2026-01-02"
     }
   ]
 }

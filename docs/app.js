@@ -9,7 +9,7 @@ import { loadData, getFilteredWritings, getFilteredArtworks } from './modules/da
 import { displayArtworks } from './modules/artworkRenderer.js';
 import { displayWritings } from './modules/writingRenderer.js';
 import { filterByTopic, clearFilter, updateFilterDisplay } from './modules/filters.js';
-import { openDrawer, closeDrawer, changeMainImage, setupDrawer } from './modules/drawer.js';
+import { openDrawer, openWritingDrawer, closeDrawer, changeMainImage, setupDrawer } from './modules/drawer.js';
 import { getElement } from './utils/dom.js';
 import { DOM_IDS } from './modules/state.js';
 
@@ -105,6 +105,7 @@ async function init() {
 // Export public API for inline event handlers
 window.bilaApp = {
   openDrawer,
+  openWritingDrawer,
   closeDrawer,
   changeMainImage,
   filterByTopic,
